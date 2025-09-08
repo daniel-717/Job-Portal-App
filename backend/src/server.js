@@ -23,6 +23,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+app.use(cors({
+  origin: ["http://localhost:5173", "https://job-portal-app-five-alpha.vercel.app"],
+  credentials: true
+}));
 
 app.use('/api/auth', userRoutes);
 app.use('/api/jobs', jobRoutes);
