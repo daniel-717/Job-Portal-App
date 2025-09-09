@@ -29,6 +29,7 @@ router.patch('/update-job/:id', authMiddleware, authorizePermissions('recruiter'
 router.delete('/delete-job/:id', authMiddleware, authorizePermissions('recruiter'), deleteJobController);
 router.get('/my-jobs', authMiddleware, authorizePermissions('recruiter'), getMyJobsController);
 router.get('/job/:id/applicants', authMiddleware, authorizePermissions('recruiter'), viewApplicantsController);
+
 router.patch(
   '/job/:jobId/applicant/:applicantId/status',
   authMiddleware,
